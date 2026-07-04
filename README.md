@@ -79,16 +79,13 @@ images/
 
 ---
 
-## Simulation Waveform
+## Waveform
 
-![Waveform](images/waveform.png)
+[![Waveform](waveform.png)](waveform.png)
 
----
+## Simulation Output
 
-## Console Output
-
-![Simulation Output](images/simulation_output.png)
-
+[![Simulation Output](simulation_output.png)](simulation_output.png)
 ---
 
 ## Tools Used
