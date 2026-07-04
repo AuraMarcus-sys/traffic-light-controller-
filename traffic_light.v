@@ -22,50 +22,47 @@ always @(posedge clk or posedge reset)
 begin
 
     if(reset)
-        state <= S0;
-    else
-        case(state)
-
-            S0: state <= S1;
-            S1: state <= S2;
-            S2: state <= S3;
-            S3: state <= S0;
-
-        endcase
+  case (state)
+    S0: state <= S1;
+    S1: state <= S2;
+    S2: state <= S3;
+    S3: state <= S0;
+    default: state <= S0;
+endcase
 
 end
 
 always @(*)
 begin
 
-    case(state)
+case (state)
 
-        S0:
-        begin
-            north = GREEN;
-            east  = RED;
-        end
+    S0: begin
+        north = GREEN;
+        east  = RED;
+    end
 
-        S1:
-        begin
-            north = YELLOW;
-            east  = RED;
-        end
+    S1: begin
+        north = YELLOW;
+        east  = RED;
+    end
 
-        S2:
-        begin
-            north = RED;
-            east  = GREEN;
-        end
+    S2: begin
+        north = RED;
+        east  = GREEN;
+    end
 
-        S3:
-        begin
-            north = RED;
-            east  = YELLOW;
-        end
+    S3: begin
+        north = RED;
+        east  = YELLOW;
+    end
 
-    endcase
+    default: begin
+        north = RED;
+        east  = RED;
+    end
 
+endcase
 end
 
 endmodule
